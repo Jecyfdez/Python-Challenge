@@ -1,8 +1,9 @@
 # Python-Challenge
-
-In this challenge I am using Python to create a script and analyze the financial records of a company. Thankfully, this company has rather lax standards for accounting so the records are simple.
+Both of these challenges encompasses a real-world situation where we will dive into Python to create scripts to analyze company data.
 
 ## PyBank
+In this challenge I am using Python to create a script and analyze the financial records of a company. Thankfully, this company has rather lax standards for accounting so the records are simple.
+
 Create a Python script that analyzes the records to calculate each of the following:
 
   * The total number of months included in the dataset
