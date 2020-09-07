@@ -4,6 +4,7 @@ import csv
 
 #store the file path associated with budget_data.csv across operating systems
 csvpath = os.path.join('..','PyBank','Resources','budget_data.csv')
+output_path = os.path.join('..', 'PyBank', 'analysis', 'analysis.txt')
 months = []
 total_months = 0
 amount = 0
@@ -70,8 +71,6 @@ with open(csvpath, newline='') as csvfile:
         if min_change > monthly_change:
             min_change = monthly_change
             min_date = (row[0])
-    
-
     print('Financial Analysis')
     print('----------------------------')
     print(f'Total Months: {total_months}')
@@ -79,6 +78,15 @@ with open(csvpath, newline='') as csvfile:
     print(f'Average Change: ${average_change}')
     print(f'Greatest Increase in Profits: {max_date} (${max_change})')
     print(f'Greatest Decrease in Profits: {min_date} (${min_change})')
+
+with open(output_path, "w", newline='') as textfile:
+    print('Financial Analysis', file=textfile)
+    print('----------------------------', file=textfile)
+    print(f'Total Months: {total_months}', file=textfile)
+    print(f'Total: ${total_amount}', file=textfile)
+    print(f'Average Change: ${average_change}', file=textfile)
+    print(f'Greatest Increase in Profits: {max_date} (${max_change})', file=textfile)
+    print(f'Greatest Decrease in Profits: {min_date} (${min_change})', file=textfile)
     
     
    
