@@ -15,6 +15,8 @@ this_month = 0
 monthly_change = 0
 total_change = 0
 average_change = 0
+max_change = 0
+min_change = 0
 
 #open the file using csv module
 with open(csvpath, newline='') as csvfile:
@@ -58,23 +60,26 @@ with open(csvpath, newline='') as csvfile:
         #The average of the changes in "Profit/Losses" over the entire period
         average_change = total_change / (total_months)
 
-        
-        
-
-
+        #The greatest increase in profits (date and amount) over the entire period
+        #Find MAX
+        if max_change < monthly_change:
+            max_change = monthly_change
+            max_date = (row[0])
+        #The greatest decrease in losses (date and amount) over the entire period
+        #Find MIN
+        if min_change > monthly_change:
+            min_change = monthly_change
+            min_date = (row[0])
     
+
+    print('Financial Analysis')
+    print('----------------------------')
     print(f'Total Months: {total_months}')
-    print(f'Total: {total_amount}')
-    print(f'Average Change: {average_change}')
-   
-
-    
-    #The greatest increase in profits (date and amount) over the entire period
+    print(f'Total: ${total_amount}')
+    print(f'Average Change: ${average_change}')
+    print(f'Greatest Increase in Profits: {max_date} (${max_change})')
+    print(f'Greatest Decrease in Profits: {min_date} (${min_change})')
     
     
-    #The greatest decrease in losses (date and amount) over the entire period
-
-
-    #read each row of data after the header
    
         
