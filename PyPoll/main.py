@@ -46,7 +46,6 @@ with open(csvpath, newline='') as csvfile:
         #candidate_list = list(set(candidate_list))
         
     #print(c)
-        #assign candidate votes to a variable to print in proper text format
         #The total number of votes each candidate won
         #The percentage of votes each candidate won
         if name == "Khan":
@@ -71,7 +70,7 @@ with open(csvpath, newline='') as csvfile:
     
         #The winner of the election based on popular vote.
         
-
+    def 
 
     print('Election Results')
     print('------------------------')
