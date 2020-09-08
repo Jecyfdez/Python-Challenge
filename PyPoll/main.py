@@ -65,8 +65,14 @@ with open(csvpath, newline='') as csvfile:
     otooley_percent = otooley_votes / total_votes
     otooley_percent= "{:.3%}".format(otooley_percent)
             
-
-    
+    if khan_percent > correy_percent and khan_percent > li_percent and khan_percent > otooley_percent:
+        winner = "Khan"
+    if correy_percent > khan_percent and correy_percent > li_percent and correy_percent > otooley_percent:
+        winner = "Correy"
+    if li_percent > khan_percent and li_percent > correy_percent and li_percent > otooley_percent:
+        winner = "Li"
+    if otooley_percent > khan_percent and otooley_percent > correy_percent and otooley_percent > li_percent:
+        winner = "O'Tooley"
  
 print('Election Results')
 print('------------------------')
@@ -77,7 +83,7 @@ print(f'Correy: {correy_percent} ({correy_votes})')
 print(f'Li: {li_percent} ({li_votes})')
 print(f"O'Tooley: {otooley_percent} ({otooley_votes})")
 print('------------------------')
-print('Winner: Khan')
+print(f'Winner: {winner}')
 print('------------------------')
 
 
