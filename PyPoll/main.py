@@ -64,7 +64,8 @@ with open(csvpath, newline='') as csvfile:
     otooley_votes = (c["O'Tooley"])
     otooley_percent = otooley_votes / total_votes
     otooley_percent= "{:.3%}".format(otooley_percent)
-            
+    
+    #FIND WINNER USING IF STATEMENT TO FIND LARGEST PERCENT VOTES
     if khan_percent > correy_percent and khan_percent > li_percent and khan_percent > otooley_percent:
         winner = "Khan"
     if correy_percent > khan_percent and correy_percent > li_percent and correy_percent > otooley_percent:
@@ -73,7 +74,8 @@ with open(csvpath, newline='') as csvfile:
         winner = "Li"
     if otooley_percent > khan_percent and otooley_percent > correy_percent and otooley_percent > li_percent:
         winner = "O'Tooley"
- 
+
+#print results to terminal
 print('Election Results')
 print('------------------------')
 print(f'Total Votes: {total_votes}')
@@ -87,7 +89,7 @@ print(f'Winner: {winner}')
 print('------------------------')
 
 
-
+#export a text file 'analysis.txt' with the results
 output_path = os.path.join('..', 'PyPoll', 'analysis', 'analysis.txt')
 with open(output_path, "w", newline='') as textfile:
     print('Election Results', file=textfile)
