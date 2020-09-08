@@ -4,7 +4,7 @@ import csv
 #create a path to open election_data.csv
 csvpath = os.path.join('..','PyPoll','Resources','election_data.csv')
     
-    #Assign variables to outcomes wanted
+#Assign variables to outcomes wanted
 c = {}
 candidate_list = []
 total_votes = 0
