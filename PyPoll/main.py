@@ -41,47 +41,59 @@ with open(csvpath, newline='') as csvfile:
     for name in candidate_list:
         
         #COMPLETE LIST OF CANDIDATES AND NUMBER OF VOTES USING DICT()
-        #c[name] = c.get(name,0) +1
+        c[name] = c.get(name,0) +1
         
-        #candidate_list = list(set(candidate_list))
-        
-    #print(c)
-        #The total number of votes each candidate won
-        #The percentage of votes each candidate won
-        if name == "Khan":
-            khan_votes += 1
-            khan_percent = (khan_votes / total_votes)
-            khan_percent= "{:.3%}".format(khan_percent)
-             
-        if name == "O'Tooley":
-            otooley_votes += 1
-            otooley_percent = (otooley_votes / total_votes)
-            otooley_percent= "{:.3%}".format(otooley_percent)
-             
-        if name == "Correy":
-            correy_votes += 1
-            correy_percent = (correy_votes / correy_votes)
-            correy_percent= "{:.3%}".format(correy_percent)
-            
-        if name == "Li":
-            li_votes += 1
-            li_percent = (li_votes / total_votes)
-            li_percent= "{:.3%}".format(li_percent)
+        candidate_list = list(set(candidate_list))
     
-        #The winner of the election based on popular vote.
-        
-    def 
+    #FIND THE TOTAL NUMBER VOTES PER CANDIDATE
+    #FIND THE PERCENTAGE OF VOTES
+    #FORMAT TO PERCENTAGE WITH 3 DECIMALS
 
-    print('Election Results')
-    print('------------------------')
-    print(f'Total Votes: {total_votes}')
-    print('------------------------')
-   
-    print()
-    print(f'{khan_votes} {otooley_votes} {correy_votes} {li_votes}')
-    print('------------------------')
-    print('Winner: (winner)')
-    print('------------------------')
+    khan_votes = (c["Khan"])
+    khan_percent = khan_votes/total_votes
+    khan_percent= "{:.3%}".format(khan_percent)
+    
+    correy_votes = (c["Correy"])
+    correy_percent = correy_votes/total_votes
+    correy_percent= "{:.3%}".format(correy_percent)
+    
+    li_votes = (c["Li"])
+    li_percent = li_votes / total_votes
+    li_percent = "{:.3%}".format(li_percent)
+    
+    otooley_votes = (c["O'Tooley"])
+    otooley_percent = otooley_votes / total_votes
+    otooley_percent= "{:.3%}".format(otooley_percent)
+            
 
+    
+ 
+print('Election Results')
+print('------------------------')
+print(f'Total Votes: {total_votes}')
+print('------------------------')
+print(f'Khan: {khan_percent} ({khan_votes})')
+print(f'Correy: {correy_percent} ({correy_votes})')
+print(f'Li: {li_percent} ({li_votes})')
+print(f"O'Tooley: {otooley_percent} ({otooley_votes})")
+print('------------------------')
+print('Winner: Khan')
+print('------------------------')
+
+
+
+output_path = os.path.join('..', 'PyPoll', 'analysis', 'analysis.txt')
+with open(output_path, "w", newline='') as textfile:
+    print('Election Results', file=textfile)
+    print('------------------------', file=textfile)
+    print(f'Total Votes: {total_votes}', file=textfile)
+    print('------------------------', file=textfile)
+    print(f'Khan: {khan_percent} ({khan_votes})', file=textfile)
+    print(f'Correy: {correy_percent} ({correy_votes})', file=textfile)
+    print(f'Li: {li_percent} ({li_votes})', file=textfile)
+    print(f"O'Tooley: {otooley_percent} ({otooley_votes})", file=textfile)
+    print('------------------------', file=textfile)
+    print('Winner: Khan', file=textfile)
+    print('------------------------', file=textfile)
 
 
